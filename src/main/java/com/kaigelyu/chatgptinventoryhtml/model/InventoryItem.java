@@ -13,7 +13,7 @@ public class InventoryItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // 主键自增
     private Long id;
 
-    @Column(name = "name", nullable = false)  // 列名为 name，不能为空
+    @Column(name = "name", nullable = false)  // 列名为 name（可有可无），不能为空
     private String name;
 
     @Column(name = "quantity")

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.kaigelyu.chatgptinventoryhtml.model.InventoryItem;
-import com.kaigelyu.chatgptinventoryhtml.repository.InventoryRepository;
+import com.kaigelyu.chatgptinventoryhtml.repository.InventoryRepository; // 导入接口,便捷操作数据库
 
 import java.util.List;
 
@@ -15,13 +15,17 @@ import java.util.List;
 @Controller
 public class InventoryController {
 
-    @Autowired
+    @Autowired // 让spring处理
+    // 创建好接口
     private InventoryRepository inventoryRepository;
 
     // 显示库存列表页面
     @GetMapping("/")
+    // Model model是用来与前端交互数据用的
     public String listItems(Model model) {
+        // 定义一个存放InventoryItem类的列表items
         List<InventoryItem> items = inventoryRepository.findAll();
+        // 传递items参数到listItems页面,model是传递参数用的
         model.addAttribute("items", items);
         return "listItems";  // 对应 templates/listItems.html
     }
