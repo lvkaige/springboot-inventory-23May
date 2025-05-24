@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!-- thymeleaf的声明 -->
+<html xmlns:th="http://www.thymeleaf.org" lang="html">
+
 <head>
     <meta charset="UTF-8">
     <title>库存管理</title>
     <link rel="stylesheet" th:href="@{/css/index.css}" />
+    <!--css文件的位置-->
 </head>
+
 <body>
 <div class="container">
     <h1>📦 库存管理系统</h1>
 
+    <!-- 这里是一个表单 -->
+    <!-- 用post的方式访问，把数据提交给/add，即提交到 InventoryController 中的 @PostMapping("/add") 方法。  -->
     <form method="post" action="/add" class="form-card">
+        <!-- for="name"是指这个label绑定了id="name"的输入框-->
         <label for="name">名称</label>
+        <!-- name="name"是指 request.POST['name'],输入的值会保存到“name”里传递给后端       -->
         <input type="text" id="name" name="name" required>
 
         <label for="quantity">数量</label>
@@ -29,6 +37,7 @@
         </tr>
         </thead>
         <tbody>
+        <!-- 循环语句，等同于{% for item in items %} items是从后端读取的 -->
         <tr th:each="item : ${items}">
             <td th:text="${item.id}"></td>
             <td th:text="${item.name}"></td>
@@ -38,4 +47,5 @@
     </table>
 </div>
 </body>
+
 </html>

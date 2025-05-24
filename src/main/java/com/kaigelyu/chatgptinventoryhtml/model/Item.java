@@ -5,12 +5,12 @@ import jakarta.persistence.*;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; // 数据库内部编号
 
-    private String name;
-    private Integer quantity;
+    private String name; // 物品名字
+    private Integer quantity; // 物品数量
 
-    // Getters and Setters
+    // 一些操作方法
     public Long getId() {
         return id;
     }
