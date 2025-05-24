@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    background: #f9fafb;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f4f6f8;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.form-card label {
+    font-weight: bold;
+}
+
+.form-card input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.2s;
+}
+
+.form-card input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.form-card button {
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-card button:hover {
+    background-color: #2980b9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+table th {
+    background-color: #f0f3f5;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f9f9f9;
+}
