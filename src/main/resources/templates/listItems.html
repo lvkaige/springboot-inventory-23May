@@ -13,7 +13,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>ID</th><th>名称</th><th>数量</th><th>价格</th><th>操作</th>
+            <th>ID</th><th>名称</th><th>数量</th><th>操作</th>
         </tr>
         </thead>
         <tbody>
@@ -22,7 +22,6 @@
             <td th:text="${item.id}">1</td>
             <td th:text="${item.name}">示例名称</td>
             <td th:text="${item.quantity}">10</td>
-            <td th:text="${item.price}">99.9</td>
             <td>
                 <!-- 编辑按钮（两种方式之一：跳转编辑页） -->
                 <a th:href="@{'/items/edit/' + ${item.id}}" class="btn btn-sm btn-warning">编辑</a>
@@ -32,42 +31,45 @@
                    onclick="return confirm('确定删除此项?');">删除</a>
 
                 <!-- 编辑按钮（方式二：Bootstrap 模态弹窗） -->
-                <button type="button" class="btn btn-sm btn-info"
-                        data-bs-toggle="modal"
-                        th:data-bs-target="'#editModal' + ${item.id}">
-                    模态编辑
-                </button>
+<!--                <button type="button" class="btn btn-sm btn-info"-->
+<!--                        data-bs-toggle="modal"-->
+<!--                        th:data-bs-target="'#editModal' + ${item.id}">-->
+<!--                    模态编辑-->
+<!--                </button>-->
 
-                <!-- 模态框内容 -->
-                <div class="modal fade" th:id="'editModal' + ${item.id}" tabindex="-1">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">编辑库存项</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- 模态框内的编辑表单 -->
-                                <form th:action="@{'/items/' + ${item.id}}" th:object="${item}" method="post">
-                                    <div class="mb-3">
-                                        <label class="form-label">名称</label>
-                                        <input th:field="*{name}" class="form-control" placeholder="名称"/>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">数量</label>
-                                        <input th:field="*{quantity}" class="form-control" placeholder="数量"/>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">价格</label>
-                                        <input th:field="*{price}" class="form-control" placeholder="价格"/>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">保存修改</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 模态框结束 -->
+                <!-- 弹窗内容 -->
+<!--                <div class="modal fade" th:id="'editModal' + ${item.id}" tabindex="-1">-->
+<!--                    <div class="modal-dialog">-->
+<!--                        <div class="modal-content">-->
+<!--                            <div class="modal-header">-->
+<!--                                <h5 class="modal-title">编辑库存项</h5>-->
+<!--                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>-->
+<!--                            </div>-->
+<!--                            <div class="modal-body">-->
+
+<!--&lt;!&ndash;                                <form action="/items/${id}" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <label for="name">名称</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <input type="text" id="name" name="name" required>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <label for="quantity">数量</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <input type="number" id="quantity" name="quantity" required>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <button type="submit">提交</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </form>&ndash;&gt;-->
+<!--                                <form th:action="@{'/items/' + ${item.id}}" th:object="${item}" method="post">-->
+<!--                                    <label for="name">名称</label>-->
+<!--                                    <input type="text" id="name" name="name" th:field="*{name}" required>-->
+
+<!--                                    <label for="quantity">数量</label>-->
+<!--                                    <input type="number" id="quantity" name="quantity" th:field="*{quantity}" required>-->
+
+<!--                                    <button type="submit">提交</button>-->
+<!--                                </form>-->
+
+
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <!-- 弹窗结束 -->
             </td>
         </tr>
         </tbody>
